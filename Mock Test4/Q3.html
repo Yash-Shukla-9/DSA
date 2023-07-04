@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Q3</title>
+  </head>
+  <body>
+    <img src="" alt="" />
+
+    <p>
+      Execution context is a fundamental concept in JavaScript that helps manage
+      the execution of code. It provides an environment in which JavaScript code
+      is executed and variables, functions, and objects are created and stored.
+      An execution context can be thought of as a container that holds all the
+      necessary information for the execution of a piece of code. This
+      information includes variable and function declarations, the value of the
+      "this" keyword, and a reference to the outer environment.
+
+      <br />
+      <br />
+      There are threetypes of execution contexts in JavaScript: Global Execution
+      Context: <br />
+      <br />
+      The global execution context is created when the script is first loaded.
+      It represents the default execution context and has a global scope.
+      Variables and functions declared in the global scope are accessible from
+      anywhere in the script. Function Execution Context: When a function is
+      invoked, a new function execution context is created. Each function call
+      has its own execution context, which includes information about the
+      function's arguments, local variables, and the reference to its outer
+      environment (lexical scope). When a function finishes executing, its
+      execution context is popped off the stack.
+    </p>
+
+    <script>
+      // Global scope
+      var globalVariable = "I am in the global scope";
+
+      function outerFunction() {
+        var outerVariable = "I am in the outer function";
+
+        function innerFunction() {
+          var innerVariable = "I am in the inner function";
+          console.log(innerVariable);
+          console.log(outerVariable);
+          console.log(globalVariable);
+        }
+
+        innerFunction();
+      }
+
+      outerFunction();
+      console.log(globalVariable);
+    </script>
+  </body>
+</html>

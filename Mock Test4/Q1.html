@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Q1</title>
+  </head>
+  <style>
+    .static {
+      position: static;
+      background-color: aquamarine;
+      width: 100px;
+      height: 100px;
+    }
+
+    .relative {
+      position: relative;
+      top: 10px;
+      left: 20px;
+
+      background-color: rgb(55, 4, 41);
+      width: 300px;
+      height: 300px;
+    }
+
+    .absolute {
+      position: absolute;
+      top: 50px;
+      right: 20px;
+
+      background-color: rgb(26, 231, 70);
+      width: 200px;
+      height: 200px;
+    }
+
+    .fixed {
+      position: fixed;
+      top: 20px;
+      background-color: rgb(242, 61, 11);
+      width: 20px;
+      height: 20px;
+      left: 20px;
+    }
+
+    .sticky {
+      position: sticky;
+
+      background-color: rgb(11, 103, 242);
+      width: 20px;
+      height: 20px;
+
+      top: 0;
+    }
+  </style>
+
+  <body>
+    <div class="static"></div>
+
+    <div class="relative">
+      <div class="absolute"></div>
+    </div>
+
+    <div class="fixed"></div>
+
+    <div class="sticky"></div>
+  </body>
+</html>
