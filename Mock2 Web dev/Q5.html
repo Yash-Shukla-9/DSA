@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Form Validation</title>
+    <style>
+      body {
+        background-color: rgb(193, 217, 225);
+      }
+      .Form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+      }
+    </style>
+    <script>
+      function validateForm() {
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const phone = document.getElementById("phone").value;
+        const password = document.getElementById("password").value;
+        const age = document.getElementById("age").value;
+        const gender = document.getElementById("gender").value;
+        const date = document.getElementById("date").value;
+        const color = document.getElementById("color").value;
+
+        // Validate name
+        if (name.length < 3) {
+          alert("Name must be at least 3 characters long.");
+          return false;
+        }
+
+        // Validate email
+        if (!/^\w+@\w+\.\w+$/.test(email)) {
+          alert("Invalid email address.");
+          return false;
+        }
+
+        // Validate phone number
+        if (!/^[0-9]{10}$/.test(phone)) {
+          alert("Invalid phone number.");
+          return false;
+        }
+
+        // Validate password
+        if (password.length < 8) {
+          alert("Password must be at least 8 characters long.");
+          return false;
+        }
+
+        // Validate age
+        if (age < 18) {
+          alert("You must be at least 18 years old to use this form.");
+          return false;
+        }
+
+        // Validate gender
+        if (gender === "") {
+          alert("Please select a gender.");
+          return false;
+        }
+
+        // Validate date
+        if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) {
+          alert("Invalid date format.");
+          return false;
+        }
+
+        // Validate color
+        if (color === "") {
+          alert("Please select a color.");
+          return false;
+        }
+
+        return true;
+      }
+    </script>
+  </head>
+  <body>
+    <form class="Form" onsubmit="return validateForm()">
+      <label>Name: -</label>
+      <input type="text" id="name" placeholder="Name" />
+      <label>Email: -</label>
+      <input type="email" id="email" placeholder="Email" />
+      <label>Phone: -</label>
+      <input type="tel" id="phone" placeholder="Phone" />
+      <label>Password: -</label>
+      <input type="password" id="password" placeholder="Password" />
+      <label>Age: -</label>
+      <input type="number" id="age" placeholder="Age" />
+      <select id="gender">
+        <option value="">Gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+      </select>
+      <label>Date Of Birth: -</label>
+      <input type="date" id="date" />
+      <label>Color: -</label>
+      <input type="color" id="color" />
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>
